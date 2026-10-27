@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boutique SI</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf9f6;--bar:#f6f2ec;--card:#fff;--frame:#efe8dd;--ink:#1a1714;--mute:#7d766d;--line:#e8e1d7;
+--o1:#c9502a;--o2:#e8823a;--grad:linear-gradient(90deg,var(--o1),var(--o2));--ok:#1f9d63;--no:#e05252;--f:"Cairo",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--f);min-height:100vh}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--o1);outline-offset:2px}
+.bar{position:sticky;top:0;z-index:20;background:rgba(246,242,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar>div{max-width:1120px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.14em;background:none;border:0}
+.brand img{width:52px;height:52px;border-radius:50%}
+.brand b{color:var(--o1)}
+.acts{display:flex;gap:10px}
+.pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 18px;font-weight:600;font-size:.92rem;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.pill i{font-style:normal;background:var(--grad);color:#fff;border-radius:999px;padding:0 8px;margin-inline-start:6px;font-size:.8rem}
+main{max-width:1120px;margin:auto;padding:28px 20px 60px}
+.hero{text-align:center;padding:clamp(36px,7vw,72px) 20px;border-radius:28px;border:1px solid var(--line);background:linear-gradient(160deg,#fff,#f3ece2)}
+.hero h1{font-weight:800;font-size:clamp(2.4rem,7vw,4.2rem);line-height:1.1}
+.hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.slogan{font-weight:600;font-size:clamp(1.2rem,3vw,1.7rem);margin:12px 0 8px;color:var(--o1)}
+.sub{color:var(--mute);max-width:560px;margin:0 auto 24px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.chips span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:.9rem}
+h2{font-weight:800;font-size:1.7rem;margin:44px 0 4px}
+.lead{color:var(--mute);margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(60,40,20,.06);display:flex;flex-direction:column;transition:box-shadow .25s}
+.card.click{cursor:pointer}.card.click:hover{box-shadow:0 10px 30px rgba(60,40,20,.12)}
+.frame{background:var(--frame);padding:14px;position:relative}
+.frame img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;background:#ddd}
+.frame img.off{filter:grayscale(.6);opacity:.7}
+.tag{position:absolute;top:24px;inset-inline-end:24px;background:#fff;border-radius:999px;padding:1px 12px;font-size:.82rem;font-weight:600}
+.tag.ok{color:var(--ok)}.tag.no{color:var(--no)}
+.info{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.info h3{font-weight:800;font-size:1.15rem}
+.price{display:inline-block;background:var(--grad);color:#fff;font-weight:800;border-radius:999px;padding:6px 18px;box-shadow:0 6px 16px rgba(201,80,42,.28);white-space:nowrap}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.mute{color:var(--mute);font-size:.9rem}
+.sizes{display:flex;flex-wrap:wrap;gap:8px}
+.sz{min-width:44px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bar);font-weight:600}
+.sz:hover:not(:disabled){border-color:var(--o1)}.sz.on{background:var(--ink);color:#fff;border-color:var(--ink)}.sz:disabled{opacity:.35;cursor:not-allowed}
+.btn{border:0;border-radius:14px;background:var(--grad);color:#fff;font-weight:800;padding:12px 18px;width:100%}
+.btn:disabled{background:#b9b3ab;cursor:not-allowed}
+.back{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.back h2{margin:0}
+.state{text-align:center;color:var(--mute);padding:50px 0}
+.spin{width:30px;height:30px;border:3px solid var(--line);border-top-color:var(--o1);border-radius:50%;margin:0 auto 12px;animation:s .9s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+.contact{text-align:center;border-top:1px solid var(--line);margin-top:56px;padding-top:28px}
+.contact .chips{margin-top:14px}
+.contact a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 20px;text-decoration:none;color:inherit;font-weight:600}
+.contact a:hover{border-color:var(--o1)}
+.shade{position:fixed;inset:0;background:rgba(26,23,20,.4);z-index:40}
+.drawer{position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(460px,100%);background:var(--bg);z-index:50;overflow:auto;padding:22px;box-shadow:-10px 0 40px rgba(0,0,0,.15)}
+[hidden]{display:none!important}
+.dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.dh h3{font-weight:800;font-size:1.3rem}
+.x{background:none;border:0;font-size:2rem;line-height:1;color:var(--mute)}
+.item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px;display:grid;gap:10px}
+.item .top{display:flex;justify-content:space-between;gap:8px;font-weight:800}
+.item .rm{background:none;border:0;color:var(--mute);font-size:.85rem;text-decoration:underline}
+.item .bot{display:flex;justify-content:space-between;align-items:center}
+select,input,textarea{font:inherit;width:100%;border:1px solid var(--line);border-radius:14px;padding:12px 16px;background:#fff;color:var(--ink)}
+select:focus,input:focus,textarea:focus{border-color:var(--o1);outline:none}
+.item select{width:auto;padding:6px 10px}
+.qty{display:flex;align-items:center;gap:10px;font-weight:800}
+.qty button{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:1.1rem}
+.tot{display:flex;justify-content:space-between;align-items:center;margin:16px 0;font-weight:800}
+form{display:grid;gap:12px}
+.done{text-align:center;padding:40px 0}.done h3{font-weight:800;font-size:1.5rem;margin-bottom:8px}.done .btn{margin-top:14px;display:block;text-decoration:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="bar"><div>
+  <button class="brand" id="home"><img src="logo.png" alt="SI Boutique"><span><b>SI</b> BOUTIQUE</span></button>
+  <div class="acts">
+    <button class="pill" id="cart-btn"><span data-t="cart"></span><i id="cnt">0</i></button>
+    <button class="pill" id="lang"></button>
+  </div>
+</div></header>
+
+<main>
+  <section class="hero">
+    <h1>Boutique <span>SI</span></h1>
+    <p class="slogan" data-t="slogan"></p>
+    <p class="sub" data-t="sub"></p>
+    <div class="chips"><span data-t="c1"></span><span data-t="c2"></span><span data-t="c3"></span></div>
+  </section>
+
+  <div id="state" class="state"><div class="spin"></div><p data-t="loading"></p></div>
+
+  <section id="home-view" hidden>
+    <h2 data-t="ours"></h2><p class="lead" data-t="oursSub"></p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="prod-view" hidden>
+    <div class="back"><button class="pill" id="back" data-t="back"></button><h2 id="p-name"></h2><span class="price" id="p-price"></span></div>
+    <p class="lead" data-t="pickSub"></p>
+    <div class="grid" id="vgrid"></div>
+  </section>
+
+  <section class="contact"><p class="mute" data-t="contact"></p><div class="chips" id="socials"></div></section>
+</main>
+
+<div class="shade" id="shade" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Panier"><div id="dbody"></div></aside>
+
+<script>
+/* ===== CONFIG ===== */
+const CONFIG={
+  API:"https://script.google.com/macros/s/AKfycbyk-bBygPX1aAswdVXNifPjMpxKIrYxBbrZSKKc8gFx46XhHoeVdhz3TzF9_OGR07zq/exec",
+  COUNTRY_CODE:"213", SAVE_ORDER_TO_SHEET:true, OPEN_WHATSAPP:true, DEFAULT_LANG:"ar"
+};
+const WILAYAS=["Adrar","Chlef","Laghouat","Oum El Bouaghi","Batna","Béjaïa","Biskra","Béchar","Blida","Bouira","Tamanrasset","Tébessa","Tlemcen","Tiaret","Tizi Ouzou","Alger","Djelfa","Jijel","Sétif","Saïda","Skikda","Sidi Bel Abbès","Annaba","Guelma","Constantine","Médéa","Mostaganem","M'Sila","Mascara","Ouargla","Oran","El Bayadh","Illizi","Bordj Bou Arréridj","Boumerdès","El Tarf","Tindouf","Tissemsilt","El Oued","Khenchela","Souk Ahras","Tipaza","Mila","Aïn Defla","Naâma","Aïn Témouchent","Ghardaïa","Relizane","Timimoun","Bordj Badji Mokhtar","Ouled Djellal","Béni Abbès","In Salah","In Guezzam","Touggourt","Djanet","El M'Ghair","El Meniaa"];
+const TXT={
+fr:{cur:"DA",lang:"العربية",cart:"Panier",slogan:"Chaque pas mérite du style.",sub:"Des baskets choisies avec soin. Choisissez le modèle, la couleur, la pointure — livré jusqu'à votre porte.",c1:"Livraison rapide",c2:"Qualité garantie",c3:"Échange à la réception",ours:"Nos modèles",oursSub:"Choisissez un modèle pour voir les couleurs et pointures disponibles.",colors:n=>n+(n>1?" couleurs":" couleur"),back:"Retour",pickSub:"Choisissez une couleur et une pointure.",ok:"Disponible",no:"Indisponible",sizes:"Pointures disponibles",add:"Ajouter au panier",pick:"Choisissez une pointure",size:"Pointure",remove:"Retirer",empty:"Votre panier est vide.",total:n=>`Total (${n} paire${n>1?"s":""})`,name:"Nom et prénom",phone:"Numéro de téléphone",wilaya:"Choisir la wilaya",addr:"Adresse complète",note:"Remarque (facultatif)",confirm:"Confirmer la commande",sending:"Envoi…",thanks:"Merci !",thanksSub:"Votre commande est enregistrée. Nous vous appellerons pour la confirmer.",wa:"Confirmer sur WhatsApp",close:"Fermer",contact:"Contactez-nous",loading:"Chargement des produits…",err:"Impossible de charger les produits pour le moment. Vérifiez votre connexion.",retry:"Réessayer",none:"Aucun produit pour le moment.",wMsg:"Bonjour, je souhaite commander :"},
+ar:{cur:"دج",lang:"Français",cart:"السلة",slogan:"كل خطوة تستحق أناقة.",sub:"أحذية رياضية مختارة بعناية. اختر الموديل، ثم اللون، ثم المقاس — يصلك حتى باب المنزل.",c1:"توصيل سريع",c2:"جودة مضمونة",c3:"إمكانية التبديل عند الاستلام",ours:"موديلاتنا",oursSub:"اختر موديلاً لمشاهدة الألوان والمقاسات المتوفرة.",colors:n=>n+" ألوان",back:"رجوع",pickSub:"اختر لوناً ثم مقاساً.",ok:"متوفر",no:"غير متوفر",sizes:"المقاسات المتوفرة",add:"أضف إلى السلة",pick:"اختر مقاساً",size:"مقاس",remove:"إزالة",empty:"سلتك فارغة.",total:n=>`المجموع (${n} زوج)`,name:"الاسم الكامل",phone:"رقم الهاتف",wilaya:"اختر الولاية",addr:"العنوان بالتفصيل",note:"ملاحظة (اختياري)",confirm:"تأكيد الطلب",sending:"جارٍ الإرسال…",thanks:"شكراً لك!",thanksSub:"تم تسجيل طلبك. سنتصل بك لتأكيده.",wa:"تأكيد عبر واتساب",close:"إغلاق",contact:"تواصل معنا",loading:"جارٍ تحميل المنتجات…",err:"تعذّر تحميل المنتجات حالياً. تحقق من اتصالك بالإنترنت.",retry:"إعادة المحاولة",none:"لا توجد منتجات حالياً.",wMsg:"مرحباً، أريد طلب:"}};
+
+/* ===== TOOLS ===== */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let lang=localStorage.getItem("si_lang")||CONFIG.DEFAULT_LANG;
+const t=k=>TXT[lang][k];
+const money=n=>Number(n).toLocaleString("fr-FR")+" "+t("cur");
+const cap=s=>s?s[0].toUpperCase()+s.slice(1):"";
+const drive=u=>{u=String(u||"").trim();const m=u.match(/\/d\/([\w-]+)/)||u.match(/[?&]id=([\w-]+)/);return m?`https://drive.google.com/thumbnail?id=${m[1]}&sz=w900`:u};
+const img=(u,alt,cls="")=>`<img class="${cls}" src="${esc(drive(u))}" alt="${esc(alt)}" loading="lazy" referrerpolicy="no-referrer">`;
+const digits=n=>{let d=String(n||"").replace(/\D/g,"");if(d.startsWith("0"))d=d.slice(1);return d.length===9?CONFIG.COUNTRY_CODE+d:d};
+const wa=(n,text)=>/^https?:/.test(String(n))?String(n):"https://wa.me/"+digits(n)+(text?"?text="+encodeURIComponent(text):"");
+const store=(k,v)=>{try{return v===undefined?JSON.parse(localStorage.getItem(k)):localStorage.setItem(k,JSON.stringify(v))}catch{return null}};
+
+/* ===== STATE ===== */
+let P=[],L={},cart=store("si_cart")||[],cur=null,sel={};
+
+async function init(){
+  $("#state").hidden=false;$("#state").innerHTML=`<div class="spin"></div><p>${t("loading")}</p>`;
+  try{
+    const r=await fetch(CONFIG.API);if(!r.ok)throw 0;
+    const d=await r.json(),vars=d.variantes||[];
+    P=(d.categories||[]).map(c=>({id:String(c.Category),name:c.Name,price:Number(c.Price)||0,img:c.ImageURL,
+      v:vars.filter(v=>String(v.Category)===String(c.Category)).map(v=>{const dk=Object.keys(v).find(k=>k.toLowerCase().startsWith("dispo"));
+        return{col:String(v.Colour).trim(),img:v.ImageURL,sizes:String(v.Sizes).split(/[\s,;\/]+/).filter(Boolean).sort((a,b)=>a-b),ok:String(v[dk]).trim().toLowerCase()==="oui"}})}));
+    L=d.links||{};
+    cart=cart.filter(i=>P.find(p=>p.id===i.pid&&p.v[i.vi]));
+    $("#state").hidden=true;show();
+  }catch(e){
+    console.error(e);
+    $("#state").innerHTML=`<p>${t("err")}</p><br><button class="pill" id="retry">${t("retry")}</button>`;
+    $("#retry").onclick=init;
+  }
+}
+
+/* ===== VIEWS ===== */
+function show(){
+  document.querySelectorAll("[data-t]").forEach(e=>{const v=t(e.dataset.t);if(typeof v==="string")e.textContent=v});
+  $("#lang").textContent=t("lang");$("#cnt").textContent=cart.reduce((a,i)=>a+i.qty,0);
+  document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  if(!P.length)return;
+  $("#home-view").hidden=cur!==null;$("#prod-view").hidden=cur===null;
+  if(cur===null){
+    $("#grid").innerHTML=P.map((p,i)=>`<article class="card click" data-i="${i}" tabindex="0"><div class="frame">${img(p.img||p.v[0]?.img,p.name)}</div>
+      <div class="info"><div class="meta"><h3>${esc(p.name)}</h3><span class="price">${money(p.price)}</span></div><span class="mute">${t("colors")(p.v.length)}</span></div></article>`).join("")||`<p class="state">${t("none")}</p>`;
+  }else{
+    const p=P[cur];$("#p-name").textContent=p.name;$("#p-price").textContent=money(p.price);
+    $("#vgrid").innerHTML=p.v.map((v,j)=>`<article class="card" data-j="${j}"><div class="frame">${img(v.img||p.img,p.name+" "+v.col,v.ok?"":"off")}<span class="tag ${v.ok?"ok":"no"}">${v.ok?t("ok"):t("no")}</span></div>
+      <div class="info"><h3>${esc(cap(v.col))}</h3><span class="mute">${t("sizes")}</span>
+      <div class="sizes">${v.sizes.map(z=>`<button class="sz ${sel[j]===z?"on":""}" data-z="${esc(z)}" ${v.ok?"":"disabled"}>${esc(z)}</button>`).join("")}</div>
+      <button class="btn" data-add ${v.ok&&sel[j]?"":"disabled"} style="margin-top:auto">${v.ok?(sel[j]?t("add"):t("pick")):t("no")}</button></div></article>`).join("");
+  }
+  socials();
+}
+$("#grid").onclick=e=>{const c=e.target.closest(".card");if(c){cur=+c.dataset.i;sel={};show();scrollTo(0,0)}};
+$("#grid").onkeydown=e=>{if(e.key==="Enter")e.target.click()};
+$("#back").onclick=()=>{cur=null;show()};
+$("#home").onclick=()=>{cur=null;show();scrollTo(0,0)};
+$("#vgrid").onclick=e=>{
+  const c=e.target.closest(".card"),b=e.target.closest("button");if(!c||!b)return;const j=+c.dataset.j;
+  if(b.dataset.z){sel[j]=b.dataset.z;show()}
+  else if(b.hasAttribute("data-add")&&!b.disabled){
+    const f=cart.find(i=>i.pid===P[cur].id&&i.vi===j&&i.size===sel[j]);
+    f?f.qty++:cart.push({pid:P[cur].id,vi:j,size:sel[j],qty:1});
+    store("si_cart",cart);show();openCart();
+  }
+};
+$("#lang").onclick=()=>{lang=lang==="ar"?"fr":"ar";localStorage.setItem("si_lang",lang);show();if(!$("#drawer").hidden)renderCart()};
+
+function socials(){
+  const ph=L["phone number"],n=[];
+  if(ph){const d=digits(ph).replace(/^213/,"0");n.push([d.replace(/(\d{2})(?=\d)/g,"$1 "),"tel:"+d])}
+  [["Facebook","facebook link"],["Instagram","instagram link"],["TikTok","tiktok link"]].forEach(([a,k])=>L[k]&&n.push([a,L[k]]));
+  if(L["whatsApp link"])n.push(["WhatsApp",wa(L["whatsApp link"])]);
+  $("#socials").innerHTML=n.map(([a,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(a)}</a>`).join("");
+}
+
+/* ===== CART ===== */
+const line=i=>{const p=P.find(x=>x.id===i.pid);return{p,v:p.v[i.vi]}};
+function openCart(){$("#shade").hidden=$("#drawer").hidden=false;document.body.style.overflow="hidden";renderCart()}
+function closeCart(){$("#shade").hidden=$("#drawer").hidden=true;document.body.style.overflow=""}
+$("#cart-btn").onclick=openCart;$("#shade").onclick=closeCart;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCart()});
+function renderCart(){
+  const n=cart.reduce((a,i)=>a+i.qty,0),sum=cart.reduce((a,i)=>a+line(i).p.price*i.qty,0);
+  $("#cnt").textContent=n;
+  const head=`<div class="dh"><h3>${t("cart")}</h3><button class="x" id="cx" aria-label="${t("close")}">&times;</button></div>`;
+  if(!cart.length){$("#dbody").innerHTML=head+`<p class="state">${t("empty")}</p>`;$("#cx").onclick=closeCart;return}
+  $("#dbody").innerHTML=head+cart.map((i,k)=>{const{p,v}=line(i);return`<div class="item" data-k="${k}">
+    <div class="top"><span>${esc(p.name)} — ${esc(cap(v.col))}</span><button class="rm" data-rm>${t("remove")}</button></div>
+    <div class="bot"><label class="mute">${t("size")} <select data-size>${v.sizes.map(z=>`<option ${z===i.size?"selected":""}>${esc(z)}</option>`).join("")}</select></label>
+    <div class="qty"><button data-q="-1">−</button><span>${i.qty}</span><button data-q="1">+</button></div></div>
+    <span class="price" style="justify-self:start">${money(p.price*i.qty)}</span></div>`}).join("")+
+  `<div class="tot"><span class="mute">${t("total")(n)}</span><span class="price" style="font-size:1.2rem">${money(sum)}</span></div>
+   <form id="f"><input name="nom" placeholder="${t("name")}" required autocomplete="name">
+   <input name="tel" type="tel" placeholder="${t("phone")}" required pattern="[0-9+ ]{9,15}" inputmode="tel" autocomplete="tel">
+   <select name="wilaya" required><option value="">${t("wilaya")}</option>${WILAYAS.map((w,k)=>`<option value="${esc(w)}">${String(k+1).padStart(2,"0")} - ${esc(w)}</option>`).join("")}</select>
+   <input name="adresse" placeholder="${t("addr")}" required autocomplete="street-address">
+   <textarea name="note" rows="2" placeholder="${t("note")}"></textarea>
+   <button class="btn" type="submit">${t("confirm")}</button></form>`;
+  $("#cx").onclick=closeCart;$("#f").onsubmit=submit;
+}
+$("#dbody").addEventListener("click",e=>{
+  const it=e.target.closest(".item");if(!it)return;const i=cart[+it.dataset.k];
+  if(e.target.hasAttribute("data-rm"))cart.splice(+it.dataset.k,1);
+  else if(e.target.dataset.q)i.qty=Math.max(1,Math.min(20,i.qty+ +e.target.dataset.q));else return;
+  store("si_cart",cart);renderCart();show();
+});
+$("#dbody").addEventListener("change",e=>{
+  if(!e.target.matches("[data-size]"))return;const it=e.target.closest(".item"),i=cart[+it.dataset.k];
+  const dup=cart.find(x=>x!==i&&x.pid===i.pid&&x.vi===i.vi&&x.size===e.target.value);
+  if(dup){dup.qty+=i.qty;cart.splice(+it.dataset.k,1)}else i.size=e.target.value;
+  store("si_cart",cart);renderCart();
+});
+
+async function submit(e){
+  e.preventDefault();const d=Object.fromEntries(new FormData(e.target)),b=e.target.querySelector("[type=submit]");
+  b.disabled=true;b.textContent=t("sending");
+  const items=cart.map(i=>{const{p,v}=line(i);return{produit:p.name,couleur:v.col,taille:i.size,quantite:i.qty,prix:p.price}});
+  const total=items.reduce((a,i)=>a+i.prix*i.quantite,0);
+  if(CONFIG.SAVE_ORDER_TO_SHEET){try{await fetch(CONFIG.API,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify({...d,items,total,date:new Date().toISOString()})})}catch(err){console.warn(err)}}
+  const msg=`${t("wMsg")}\n`+items.map(i=>`• ${i.produit} — ${cap(i.couleur)}, ${i.taille} × ${i.quantite}`).join("\n")+`\n\n${money(total)}\n${d.nom}\n${d.tel}\n${d.wilaya}\n${d.adresse}`+(d.note?`\n${d.note}`:"");
+  const w=L["whatsApp link"];
+  cart=[];store("si_cart",cart);show();
+  $("#dbody").innerHTML=`<div class="done"><h3>${t("thanks")}</h3><p class="mute">${t("thanksSub")}</p>
+    ${CONFIG.OPEN_WHATSAPP&&w?`<a class="btn" href="${esc(wa(w,msg))}" target="_blank" rel="noopener">${t("wa")}</a>`:""}
+    <button class="pill" id="dc" style="margin-top:12px">${t("close")}</button></div>`;
+  $("#dc").onclick=closeCart;
+}
+
+show();init();
+</script>
+</body>
+</html>
