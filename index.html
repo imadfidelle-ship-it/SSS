@@ -1704,159 +1704,45 @@
             padding: 3px 10px;
             text-transform: uppercase;
         }
-    
-        /* Internship documents and building electricity gallery */
-        .document-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        .document-link {
-            display: flex;
-            align-items: center;
-            gap: 0.9rem;
-            min-height: 82px;
-            padding: 1rem 1.1rem;
-            color: var(--text-normal);
-            text-decoration: none;
-            background: var(--bg-card);
-            border: 1px solid var(--border-glow);
-            border-radius: 8px;
-            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .document-link:hover {
-            border-color: var(--electric-cyan);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px var(--shadow-deep);
-        }
-        .document-icon {
-            display: grid;
-            place-items: center;
-            flex: 0 0 44px;
-            height: 48px;
-            color: var(--electric-cyan);
-            font: 700 0.7rem 'Space Mono', monospace;
-            border: 1px solid var(--border-glow);
-            border-radius: 5px;
-        }
-        .document-copy { display: grid; gap: 0.25rem; min-width: 0; }
-        .document-copy strong { color: var(--text-bright); font-size: 0.9rem; }
-        .document-copy small { color: var(--text-dim); font-size: 0.72rem; }
-        .document-arrow { margin-left: auto; color: var(--electric-cyan); font-size: 1.2rem; }
-        .credential-project-grid {
-            display: grid;
-            grid-template-columns: minmax(180px, 0.75fr) minmax(0, 1.6fr);
-            gap: 1.5rem;
-            align-items: start;
-            margin-top: 1.5rem;
-        }
-        .credential-photo, .project-photo-grid figure { margin: 0; }
-        .credential-photo {
-            padding: 0.8rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-glow);
-            border-radius: 8px;
-        }
-        .credential-photo img {
-            display: block;
-            width: 100%;
-            max-height: 230px;
-            object-fit: contain;
-            background: #fff;
-        }
-        .credential-photo figcaption, .project-photo-grid figcaption {
-            padding-top: 0.65rem;
-            color: var(--text-dim);
-            font: 0.75rem 'Space Mono', monospace;
-        }
-        .project-photo-group h4 { margin: 0 0 0.7rem; color: var(--text-bright); }
-        .project-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
-        .project-photo-grid figure {
-            overflow: hidden;
-            padding: 0.55rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-glow);
-            border-radius: 8px;
-        }
-        .project-photo-grid img {
-            display: block;
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        @media (max-width: 700px) {
-            .document-grid { grid-template-columns: 1fr; }
-            .credential-project-grid { grid-template-columns: 1fr; }
-            .credential-photo img { max-height: 260px; }
-            .project-photo-grid img { height: 150px; }
-        }
-
-    
-        .internship-number {
-            display: inline-grid;
-            place-items: center;
-            width: 1.8rem;
-            height: 1.8rem;
-            margin-right: 0.45rem;
-            color: var(--bg-void);
-            background: var(--electric-cyan);
-            border-radius: 50%;
-            font: 700 0.78rem 'Space Mono', monospace;
-            vertical-align: middle;
-        }
-
-    
-        .linkedin-link { display: inline-flex; align-items: center; gap: .55rem; color: var(--electric-cyan); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--border-glow); padding: .35rem 0; }
-        .linkedin-link:hover { color: var(--text-bright); }
-        .linkedin-mark { display: inline-grid; place-items: center; width: 1.25rem; height: 1.25rem; color: var(--bg-void); background: var(--electric-cyan); border-radius: 3px; font: 700 .78rem Arial, sans-serif; }
-        .credential-photo img, .project-photo-grid img { cursor: zoom-in; }
-        .credential-photo img:hover, .project-photo-grid img:hover { filter: brightness(1.06); }
-        .photo-lightbox { display: none; position: fixed; inset: 0; z-index: 5000; align-items: center; justify-content: center; padding: 2rem; background: rgba(0,0,0,.88); cursor: zoom-out; }
+            .internship-card { max-width: 900px; margin: 0 auto 2rem; }
+        .internship-label { color: var(--electric-cyan); font-size: .72rem; }
+        .internship-number { display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; margin-right: .45rem; color: var(--bg-void); background: var(--electric-cyan); border-radius: 50%; font: 700 .78rem 'Space Mono', monospace; vertical-align: middle; }
+        .portfolio-photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .85rem; margin-top: 1rem; }
+        .portfolio-photo-grid > a { display: flex; flex-direction: column; gap: .5rem; min-width: 0; padding: .6rem; color: var(--text-normal); text-decoration: none; background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 8px; }
+        .portfolio-photo-grid > a:hover { border-color: var(--electric-cyan); }
+        .portfolio-photo-grid img { display: block; width: 100%; height: 170px; object-fit: contain; background: rgba(0,0,0,.2); border-radius: 4px; }
+        .portfolio-photo-grid span { color: var(--text-dim); font: .75rem 'Space Mono', monospace; }        .internship-card { max-width: 900px; margin: 0 auto 2rem; }
+        .internship-label { color: var(--electric-cyan); font-size: .72rem; }
+        .internship-number { display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; margin-right: .45rem; color: var(--bg-void); background: var(--electric-cyan); border-radius: 50%; font: 700 .78rem 'Space Mono', monospace; vertical-align: middle; }
+        .portfolio-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin-top: 1rem; }
+        .portfolio-photo-grid > a { display: flex; flex-direction: column; gap: .5rem; min-width: 0; padding: .6rem; color: var(--text-normal); text-decoration: none; background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 8px; }
+        .portfolio-photo-grid > a:hover { border-color: var(--electric-cyan); }
+        .portfolio-photo-grid img { display: block; width: 100%; height: 160px; object-fit: contain; background: rgba(0,0,0,.2); border-radius: 4px; cursor: zoom-in; }
+        .portfolio-photo-grid span { color: var(--text-dim); font: .75rem 'Space Mono', monospace; }
+        .poster-grid { grid-template-columns: minmax(170px, .8fr) repeat(2, minmax(0, 1fr)); align-items: stretch; }
+        .poster-grid img { object-position: top; }
+        .ineautom-gallery { margin-top: 1rem; border: 1px solid var(--border-glow); border-radius: 8px; background: var(--bg-card); }
+        .ineautom-gallery summary { padding: .9rem 1rem; color: var(--electric-cyan); cursor: pointer; font-weight: 700; }
+        .ineautom-gallery summary span { color: var(--text-dim); font-weight: 400; }
+        .ineautom-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 1rem 1rem; }
+        .photo-lightbox { display: none; position: fixed; inset: 0; z-index: 9999; align-items: center; justify-content: center; padding: 2rem; background: rgba(0,0,0,.9); cursor: zoom-out; }
         .photo-lightbox.open { display: flex; }
-        .photo-lightbox figure { margin: 0; text-align: center; max-width: 94vw; }
-        .photo-lightbox img { display: block; max-width: 92vw; max-height: 84vh; width: min(90vw, 960px); height: min(78vh, 720px); object-fit: contain; border: 1px solid var(--border-glow); border-radius: 6px; box-shadow: 0 18px 60px rgba(0,0,0,.55); cursor: default; }
-        .photo-lightbox figcaption { margin-top: .8rem; color: #fff; font: .9rem 'Space Mono', monospace; }
+        .photo-lightbox figure { max-width: 94vw; max-height: 90vh; margin: 0; text-align: center; }
+        .photo-lightbox img { display: block; max-width: 92vw; max-height: 82vh; width: auto; height: auto; object-fit: contain; border: 1px solid var(--border-glow); border-radius: 6px; box-shadow: 0 18px 60px rgba(0,0,0,.55); cursor: default; }
+        .photo-lightbox figcaption { margin-top: .75rem; color: #fff; font: .9rem 'Space Mono', monospace; }
         .photo-lightbox-close { position: absolute; top: 1rem; right: 1.3rem; width: 2.8rem; height: 2.8rem; color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.4); border-radius: 50%; font-size: 1.8rem; cursor: pointer; }
-        @media (max-width: 600px) { .photo-lightbox { padding: 1rem; } }
+        @media (max-width: 700px) { .portfolio-photo-grid, .poster-grid { grid-template-columns: 1fr; } .photo-lightbox { padding: 1rem; } }
 
-    
-        .pdf-preview-modal { display: none; position: fixed; inset: 0; z-index: 5100; align-items: center; justify-content: center; padding: 1.5rem; background: rgba(0,0,0,.86); }
-        .pdf-preview-modal.open { display: flex; }
-        .pdf-preview-panel { display: flex; flex-direction: column; width: min(100%, 1100px); height: min(92vh, 900px); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 10px; box-shadow: 0 24px 80px rgba(0,0,0,.55); }
-        .pdf-preview-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.1rem; border-bottom: 1px solid var(--border-glow); }
-        .pdf-preview-header h3 { margin: 0; color: var(--text-bright); font-size: 1rem; }
-        .pdf-preview-fallback { margin-left: auto; color: var(--electric-cyan); font-size: .8rem; text-decoration: none; }
-        .pdf-preview-fallback:hover { text-decoration: underline; }
-        .pdf-preview-close { width: 2.3rem; height: 2.3rem; color: var(--text-bright); background: transparent; border: 1px solid var(--border-glow); border-radius: 50%; font-size: 1.4rem; cursor: pointer; }
-        .pdf-preview-frame { flex: 1; width: 100%; min-height: 0; border: 0; background: #fff; }
-        @media (max-width: 600px) { .pdf-preview-modal { padding: .5rem; } .pdf-preview-panel { height: 96vh; } .pdf-preview-header { gap: .5rem; padding: .7rem; } .pdf-preview-header h3 { font-size: .85rem; } }
-
-    
-        .document-grid { align-items: start; }
-        .document-link.poster-preview {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: .7rem;
-            padding: .8rem;
-        }
-        .poster-thumbnail {
-            display: block;
-            width: 100%;
-            height: 205px;
-            object-fit: contain;
-            background: #f4f6f8;
-            border: 1px solid var(--border-glow);
-            border-radius: 5px;
-        }
-        .poster-preview-info { display: flex; align-items: center; gap: .6rem; }
-        .poster-preview-info .document-copy { flex: 1; }
-        .poster-preview:hover .poster-thumbnail { filter: brightness(1.03); }
-        @media (max-width: 700px) { .poster-thumbnail { height: 180px; } }
-
-    </style>
+        .building-photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .ineautom-featured-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .ineautom-gallery { margin-top: 1rem; border: 1px solid var(--border-glow); border-radius: 8px; background: var(--bg-card); }
+        .ineautom-gallery summary { padding: .9rem 1rem; color: var(--electric-cyan); cursor: pointer; font-weight: 700; }
+        .ineautom-photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 0 1rem 1rem; }
+        @media (max-width: 700px) {
+            .building-photo-grid { grid-template-columns: repeat(3, minmax(190px, 1fr)); overflow-x: auto; }
+            .ineautom-featured-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .ineautom-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }</style>
 </head>
 <body>
     <!-- 3D Particle Canvas -->
@@ -1901,15 +1787,23 @@
                     <div class="hero-role">Automation Engineering</div>
                     <div class="hero-subtitle">École Nationale Polytechnique (ENP) - Year 04</div>
                     <p class="hero-description">
-                        Automation engineering student interested in robotics, embedded systems, and control. I am building practical skills through coursework and student projects.
+                        Specializing in robotics, embedded systems, and embedded systems solutions. Building the future 
+                        of intelligent automation through innovative hardware-software integration. Transforming 
+                        complex challenges into elegant automated solutions.
                     </p>
                     <div class="live-stats">
-                        
+                        <div class="stat-item">
+                            <div class="stat-icon">⚡</div>
+                            <div class="stat-info">
+                                <div class="stat-label">Lines of Code</div>
+                                <div class="stat-number" id="linesOfCode">0</div>
+                            </div>
+                        </div>
                         <div class="stat-item">
                             <div class="stat-icon">🎯</div>
                             <div class="stat-info">
                                 <div class="stat-label">Projects</div>
-                                <div class="stat-number" id="projectCount">5</div>
+                                <div class="stat-number" id="projectCount">0</div>
                             </div>
                         </div>
                         <div class="stat-item">
@@ -1941,7 +1835,7 @@
                     <div class="data-card">
                         <span class="data-icon">🎓</span>
                         <div class="data-label">Year</div>
-                        <div class="data-value">04 / ENP</div>
+                        <div class="data-value">02 / ENP</div>
                     </div>
                     <div class="data-card">
                         <span class="data-icon">⚙️</span>
@@ -1951,7 +1845,7 @@
                     <div class="data-card">
                         <span class="data-icon">🤖</span>
                         <div class="data-label">Tech</div>
-                        <div class="data-value">ROBOTICS</div>
+                        <div class="data-value">PLC / HMI / ROBOTICS</div>
                     </div>
                 </div>
             </div>
@@ -1964,24 +1858,64 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">[ 01 / PROFILE ]</span>
-                <h2 class="section-title"><span class="section-title-gradient">PROFILE</span></h2>
-                <p class="section-description">Automatique engineering student at École Nationale Polytechnique, Algiers</p>
+                <h2 class="section-title"><span class="section-title-gradient">SYSTEM OVERVIEW</span></h2>
+                <p class="section-description">
+                    Engineering the future through automation, robotics, and intelligent systems
+                </p>
             </div>
             <div class="about-grid">
                 <div class="about-content">
-                    <h3>Academic Focus</h3>
-                    <p>Fourth-year engineering student in Automatique at ENP, with coursework spanning automatic control, state-space analysis, electrical engineering, and industrial systems.</p>
-                    <p>My studies include MATLAB and Simulink, system modeling, stability, electric motors, power electronics, and digital systems. I also work with Python, Verilog, and VHDL in programming and design projects.</p>
+                    <h3>Core Mission</h3>
+                    <p>
+                        fourth-year automation engineering student at École Nationale Polytechnique (ENP), 
+                        driven by a passion for creating intelligent systems that solve real-world challenges. 
+                        My journey into engineering began with fascination for how automated systems can 
+                        transform complex problems into elegant solutions.
+                    </p>
+                    <p>
+                        At ENP, I'm building expertise in automation, control systems, and robotics. 
+                        My focus areas include robotics, embedded systems, and embedded systems technologies, where 
+                        I integrate programming prowess with electronics and circuit design to create 
+                        innovative automated solutions.
+                    </p>
+                    <p>
+                        Technical arsenal includes Python, C/C++, and MATLAB for programming and simulation, 
+                        complemented by hands-on experience in electronics and circuit design. Constantly 
+                        evolving my skill set to push the boundaries of automation and smart systems.
+                    </p>
+                    
                     <div class="tech-tags">
-                        <div class="tech-tag"><span class="tech-tag-icon">⚙️</span><span>Automation & Control</span></div>
-                        <div class="tech-tag"><span class="tech-tag-icon">⚡</span><span>Electrical Engineering</span></div>
-                        <div class="tech-tag"><span class="tech-tag-icon">💻</span><span>Digital Systems</span></div>
+                        <div class="tech-tag">
+                            <span class="tech-tag-icon">⚙️</span>
+                            <span>Automation</span>
+                        </div>
+                        <div class="tech-tag">
+                            <span class="tech-tag-icon">🤖</span>
+                            <span>Robotics</span>
+                        </div>
+                        <div class="tech-tag">
+                            <span class="tech-tag-icon">📡</span>
+                            <span>Digital Systems</span>
+                        </div>
                     </div>
                 </div>
                 <div class="stats-grid">
-                    <div class="stat-box"><h4>ENP</h4><p>École Nationale Polytechnique</p></div>
-                    <div class="stat-box"><h4>4th</h4><p>Year — Automatique</p></div>
-                    <div class="stat-box"><h4>Focus</h4><p>Control & Industrial Automation</p></div>
+                    <div class="stat-box">
+                        <h4>ENP</h4>
+                        <p>École Nationale Polytechnique</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>AUTO</h4>
+                        <p>Automation Engineering</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>FPGA</h4>
+                        <p>Smart System Design</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>🤖</h4>
+                        <p>Robotics & Embedded</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1993,30 +1927,64 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">[ 02 / JOURNEY ]</span>
-                <h2 class="section-title"><span class="section-title-gradient">EDUCATION</span></h2>
-                <p class="section-description">Engineering studies at ENP and preparatory studies at ENSTP</p>
+                <h2 class="section-title"><span class="section-title-gradient">EDUCATIONAL TIMELINE</span></h2>
+                <p class="section-description">
+                    Milestones in my automation engineering journey
+                </p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Current</div>
-                        <h3>École Nationale Polytechnique (ENP)</h3>
-                        <p>Fourth-year engineering student in Automatique. Coursework includes control systems, state-space methods, electrical engineering, MATLAB/Simulink, and digital systems.</p>
-                    </div>
+           <div class="timeline">
+    <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+            <div class="timeline-date">Current Year — ENP</div>
+            <h3>École Nationale Polytechnique (ENP)</h3>
+            <p>Currently in fourth year of Automation Engineering. Admitted after passing the national competitive entrance exam (concours). Focusing on robotics, control systems, and embedded technologies.</p>
+            
+            <!-- Photos placeholder -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;">
+                <div style="border: 2px dashed rgba(0,255,247,0.3); min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="font-size: 1.8rem;">🖼️</span>
+                    <span style="font-size: 0.7rem; color: var(--text-dim); font-family: 'Space Mono', monospace; text-transform: uppercase;">Photo 1</span>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023 – 2025</div>
-                        <h3>Classes Préparatoires — ENSTP</h3>
-                        <p>Completed two years of preparatory classes at École Nationale Supérieure des Travaux Publics (ENSTP), studying mathematics, physics, and engineering sciences.</p>
-                    </div>
+                <div style="border: 2px dashed rgba(0,255,247,0.3); min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="font-size: 1.8rem;">🖼️</span>
+                    <span style="font-size: 0.7rem; color: var(--text-dim); font-family: 'Space Mono', monospace; text-transform: uppercase;">Photo 2</span>
+                </div>
+                <div style="border: 2px dashed rgba(0,255,247,0.3); min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="font-size: 1.8rem;">🖼️</span>
+                    <span style="font-size: 0.7rem; color: var(--text-dim); font-family: 'Space Mono', monospace; text-transform: uppercase;">Photo 3</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+            <div class="timeline-date">2023 - 2025</div>
+            <h3>Classes Préparatoires — ENSTP</h3>
+            <p>Two years of intensive preparatory classes at École Nationale Supérieure des Travaux Publics (ENSTP). Studied advanced mathematics, physics, and engineering sciences. Successfully passed the national concours to gain admission to ENP.</p>
+
+            <!-- Photos placeholder -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;">
+                <div style="border: 2px dashed rgba(0,255,247,0.3); min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="font-size: 1.8rem;">🖼️</span>
+                    <span style="font-size: 0.7rem; color: var(--text-dim); font-family: 'Space Mono', monospace; text-transform: uppercase;">Photo 1</span>
+                </div>
+                <div style="border: 2px dashed rgba(0,255,247,0.3); min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="font-size: 1.8rem;">🖼️</span>
+                    <span style="font-size: 0.7rem; color: var(--text-dim); font-family: 'Space Mono', monospace; text-transform: uppercase;">Photo 2</span>
+                </div>
+                <div style="border: 2px dashed rgba(0,255,247,0.3); min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="font-size: 1.8rem;">🖼️</span>
+                    <span style="font-size: 0.7rem; color: var(--text-dim); font-family: 'Space Mono', monospace; text-transform: uppercase;">Photo 3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
 <!-- Internships Section -->
 <section id="internships">
   <div class="section-accent section-accent-top"></div>
@@ -2024,90 +1992,201 @@
     <div class="section-header">
       <span class="section-number">[ 02.5 / INTERNSHIPS ]</span>
       <h2 class="section-title"><span class="section-title-gradient">FIELD EXPERIENCE</span></h2>
-      <p class="section-description">Internship experience across production, utilities, and electrical systems</p>
+      <p class="section-description">Practical experience in industry, utilities, electrical systems, and automation</p>
     </div>
+    <div class="timeline-content internship-card">
+      <h3><span class="internship-number">01</span> HB Technologies <span class="internship-label">Discovery Internship</span></h3>
+      <p>Introduction to smart-card manufacturing and secure production operations. I observed how careful handling and quality checks help maintain reliable production.</p>
+      <div class="portfolio-photo-grid poster-grid">
+        <a class="popup-photo" href="poster1.png"><img src="poster1.png" alt="HB Technologies internship poster"><span>HB Technologies poster</span></a>
+        <a class="document-link" href="Rapportde stage1.pdf" target="_blank" rel="noopener">Open internship report (PDF) ↗</a>
 
-    <div class="timeline-content" style="max-width: 900px; margin: 0 auto 2rem;">
-      <h3><span class="internship-number">01</span> HB Technologies <span style="font-size: 0.75rem; color: var(--electric-cyan);">Discovery Internship</span></h3>
-      <p>Introduction to smart-card manufacturing, production operations, and industrial processes.</p>
-      <div class="tech-tags" style="margin-top: 1rem;">
-        <div class="tech-tag"><span class="tech-tag-icon">🏭</span><span>Production Processes</span></div>
-        <div class="tech-tag"><span class="tech-tag-icon">💳</span><span>Smart Cards</span></div>
       </div>
-      <div class="document-grid"><a href="Rapportde stage1.pdf" target="_blank" rel="noopener" class="document-link">
-          <span class="document-icon" aria-hidden="true">PDF</span>
-          <span class="document-copy"><strong>Rapport de Stage</strong><small>Open internship report (PDF)</small></span>
-          <span class="document-arrow" aria-hidden="true">↗</span>
-        </a><a href="Stage Poster1.pdf" class="document-link poster-preview" target="_blank" rel="noopener">
-          <img class="poster-thumbnail" src="poster-hb-preview.png" alt="Preview of the HB Technologies stage poster">
-          <span class="poster-preview-info"><span class="document-copy"><strong>Stage Poster</strong><small>Click to view the full poster</small></span><span class="document-arrow" aria-hidden="true">↗</span></span>
-        </a></div>
     </div>
+    <div class="timeline-content internship-card">
+      <h3><span class="internship-number">02</span> SEAAL <span class="internship-label">Internship</span></h3>
+      <p>Exposure to industrial instrumentation, PLCs, Sofrel telemetry, communication protocols, and SCADA. I saw how field equipment and remote monitoring support water services.</p>
+      <div class="portfolio-photo-grid poster-grid">
+        <a class="popup-photo" href="poster2.png"><img src="poster2.png" alt="SEAAL internship poster"><span>SEAAL poster</span></a>
+        <a class="document-link" href="Rapport de stage2.pdf" target="_blank" rel="noopener">Open internship report (PDF) ↗</a>
 
-    <div class="timeline-content" style="max-width: 900px; margin: 0 auto 2rem;">
-      <h3><span class="internship-number">02</span> SEAAL <span style="font-size: 0.75rem; color: var(--electric-cyan);">Internship</span></h3>
-      <p>Exposure to instrumentation, automation, and remote monitoring at Société des Eaux et de l'Assainissement d'Alger.</p>
-      <ul style="margin-top: 0.8rem; padding-left: 1.2rem; line-height: 1.8;">
-        <li>Industrial instrumentation and PLCs</li>
-        <li>Sofrel telemetry equipment, PLCs, communication protocols, and SCADA systems</li>
-      </ul>
-      <div class="tech-tags" style="margin-top: 1rem;">
-        <div class="tech-tag"><span class="tech-tag-icon">⚙️</span><span>PLC & Instrumentation</span></div>
-        <div class="tech-tag"><span class="tech-tag-icon">📡</span><span>Telemetry & SCADA</span></div>
       </div>
-      <div class="document-grid"><a href="Rapport de stage2.pdf" target="_blank" rel="noopener" class="document-link">
-          <span class="document-icon" aria-hidden="true">PDF</span>
-          <span class="document-copy"><strong>Rapport de Stage</strong><small>Open internship report (PDF)</small></span>
-          <span class="document-arrow" aria-hidden="true">↗</span>
-        </a><a href="Stage poster2.pdf" class="document-link poster-preview" target="_blank" rel="noopener">
-          <img class="poster-thumbnail" src="poster-seaal-preview.png" alt="Preview of the SEAAL stage poster">
-          <span class="poster-preview-info"><span class="document-copy"><strong>Stage Poster</strong><small>Click to view the full poster</small></span><span class="document-arrow" aria-hidden="true">↗</span></span>
-        </a></div>
     </div>
-
-    <div class="timeline-content" style="max-width: 900px; margin: 0 auto 2rem;">
-      <h3><span class="internship-number">03</span> Electricity — Buildings <span style="font-size: 0.75rem; color: var(--electric-cyan);">Internship</span></h3>
-      <p>Internship experience related to electrical systems in buildings.</p>
-      <p><a class="linkedin-link" href="https://lnkd.in/p/dFf3KyUa" target="_blank" rel="noopener noreferrer"><span class="linkedin-mark">in</span> View Building Electricity Internship <span aria-hidden="true">↗</span></a></p>
-      <div class="credential-project-grid">
-        <figure class="credential-photo">
-          <img src="Dep.jpeg" alt="Diploma for building electrical studies">
-          <figcaption>Building Electricity Diploma</figcaption>
-        </figure>
-        <div class="project-photo-group">
-          <h4>Project Photos</h4>
-          <div class="project-photo-grid">
-            <figure><img src="elec1.jpeg" alt="Building electrical project with team members"><figcaption>Project work</figcaption></figure>
-            <figure><img src="elec2.jpeg" alt="Building electrical project model"><figcaption>Project model</figcaption></figure>
-          </div>
+    <div class="timeline-content internship-card">
+      <h3><span class="internship-number">03</span> Electricity — Buildings <span class="internship-label">Internship</span></h3>
+      <p>Practical work related to building electrical installations, including a project model. It helped me connect electrical concepts with the layout of building systems.</p>
+      <p><a class="linkedin-link" href="https://lnkd.in/p/dFf3KyUa" target="_blank" rel="noopener noreferrer">View Building Electricity Internship ↗</a></p>
+      <div class="portfolio-photo-grid building-photo-grid">
+        <a class="popup-photo" href="Dep.jpeg"><img src="Dep.jpeg" alt="Building electricity diploma"><span>Diploma</span></a>
+        <a class="popup-photo" href="elec1.jpeg"><img src="elec1.jpeg" alt="Building electrical project with team members"><span>Project work</span></a>
+        <a class="popup-photo" href="elec2.jpeg"><img src="elec2.jpeg" alt="Building electrical project model"><span>Project model</span></a>
+      </div>
+    </div>
+    <div class="timeline-content internship-card">
+      <h3><span class="internship-number">04</span> INEAUTOM <span class="internship-label">Industrial Automation</span></h3>
+      <p>Schneider Electric PLC programming and HMI development with Vijeo Designer. I practiced ladder logic and explored how operators monitor and control an automated process.</p>
+      <div class="portfolio-photo-grid ineautom-featured-grid">
+        <a class="popup-photo" href="HMI.png"><img src="HMI.png" alt="INEAUTOM HMI interface"><span>HMI Interface</span></a>
+        <a class="popup-photo" href="ladder1.png"><img src="ladder1.png" alt="INEAUTOM PLC ladder logic"><span>PLC Ladder Logic</span></a>
+      </div>
+      <details class="ineautom-gallery">
+        <summary>Show 3 other photos</summary>
+        <div class="portfolio-photo-grid ineautom-photo-grid">
+          <a class="popup-photo" href="HMI2.png"><img src="HMI2.png" alt="Second INEAUTOM HMI screen"><span>Additional HMI screen</span></a>
+          <a class="popup-photo" href="ladder2.png"><img src="ladder2.png" alt="Second INEAUTOM PLC ladder diagram"><span>Additional ladder diagram</span></a>
+          <a class="popup-photo" href="automat.jpg"><img src="automat.jpg" alt="Industrial automation equipment at INEAUTOM"><span>Automation equipment</span></a>
         </div>
-      </div>
-    </div>
-
-    <div class="timeline-content" style="max-width: 900px; margin: 0 auto;">
-      <h3><span class="internship-number">04</span> INEUTOM <span style="font-size: 0.75rem; color: var(--electric-cyan);">Industrial Automation</span></h3>
-      <p>Schneider Electric PLC programming and HMI development with Vijeo Designer, focused on industrial control and monitoring.</p>
-      <div class="tech-tags" style="margin-top: 1rem;">
-        <div class="tech-tag"><span class="tech-tag-icon">⚙️</span><span>Schneider Electric PLCs</span></div>
-        <div class="tech-tag"><span class="tech-tag-icon">🖥️</span><span>Vijeo Designer HMI</span></div>
-      </div>
+      </details>
     </div>
   </div>
-</section>
-
+</section><!-- Skills Section -->
     <section id="skills">
         <div class="section-accent section-accent-top"></div>
         <div class="container">
             <div class="section-header">
                 <span class="section-number">[ 03 / CAPABILITIES ]</span>
-                <h2 class="section-title"><span class="section-title-gradient">TECHNICAL AREAS</span></h2>
-                <p class="section-description">Coursework and project tools across control, electrical, and digital systems</p>
+                <h2 class="section-title"><span class="section-title-gradient">TECHNICAL ARSENAL</span></h2>
+                <p class="section-description">
+                    Comprehensive expertise across automation technologies, from code to circuits
+                </p>
             </div>
             <div class="skills-grid">
-                <div class="skill-card"><span class="skill-icon">⚙️</span><h3>Automation & Control</h3><p>Automatic control, state-space analysis, modeling, stability, PLCs, HMI, and SCADA.</p></div>
-                <div class="skill-card"><span class="skill-icon">⚡</span><h3>Electrical Engineering</h3><p>Electric motors, electrical circuits, and power electronics, including thyristors.</p></div>
-                <div class="skill-card"><span class="skill-icon">💻</span><h3>Programming & Digital Systems</h3><p>Python, Verilog, VHDL, FPGA design, MATLAB, and Simulink.</p></div>
-                <div class="skill-card"><span class="skill-icon">🤖</span><h3>Robotics & Vision</h3><p>Robotic simulation, sensors, computer vision, and intelligent inspection concepts.</p></div>
+                <div class="skill-card">
+                    <span class="skill-icon">💻</span>
+                    <h3>Programming & Simulation</h3>
+                    <p>Advanced programming and simulation capabilities for automation and control system development.</p>
+                    <div class="skill-progress">
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Python</span>
+                                <span class="progress-value">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">C/C++</span>
+                                <span class="progress-value">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">MATLAB</span>
+                                <span class="progress-value">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🤖</span>
+                    <h3>Robotics & Embedded</h3>
+                    <p>Developing intelligent robotic systems and embedded solutions for advanced automation applications.</p>
+                    <div class="skill-progress">
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Arduino/MCU</span>
+                                <span class="progress-value">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Sensors</span>
+                                <span class="progress-value">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Control Systems</span>
+                                <span class="progress-value">82%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="82"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">⚡</span>
+                    <h3>Electronics Design</h3>
+                    <p>Designing and implementing electronic circuits for automation and control applications.</p>
+                    <div class="skill-progress">
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">PCB Design</span>
+                                <span class="progress-value">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Circuit Analysis</span>
+                                <span class="progress-value">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Digital Logic</span>
+                                <span class="progress-value">78%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="78"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">📡</span>
+                    <h3>Digital Systems</h3>
+                    <p>Designing digital systems with Verilog, VHDL, and FPGA simulation tools.</p>
+                    <div class="skill-progress">
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Verilog / VHDL</span>
+                                <span class="progress-value">83%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="83"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Wireless Comm</span>
+                                <span class="progress-value">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-name">Data Analytics</span>
+                                <span class="progress-value">77%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="77"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2118,15 +2197,91 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">[ 04 / PORTFOLIO ]</span>
-                <h2 class="section-title"><span class="section-title-gradient">PROJECTS</span></h2>
-                <p class="section-description">Selected academic, automation, and robotics projects</p>
+                <h2 class="section-title"><span class="section-title-gradient">DEPLOYED SYSTEMS</span></h2>
+                <p class="section-description">
+                    Student projects in automation, control, and robotics
+                </p>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-project="1"><div class="project-number">01</div><div class="project-image"><span class="project-image-icon">💧</span></div><div class="project-content"><h3 class="project-title">Pumping Station Automation</h3><p class="project-description">Developing a three-pump station simulation with manual and automatic modes, level-based PLC logic, and pump alternation.</p><div class="project-tags"><span class="project-tag">PLC</span><span class="project-tag">HMI</span><span class="project-tag">SCADA</span></div></div></div>
-                <div class="project-card" data-project="2"><div class="project-number">02</div><div class="project-image"><span class="project-image-icon">🛠️</span></div><div class="project-content"><h3 class="project-title">Drilling Machine HMI</h3><p class="project-description">Python and Tkinter simulation with manual and automatic modes, configurable cycle settings, status indicators, and emergency-stop control.</p><div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Tkinter</span><span class="project-tag">HMI</span></div></div></div>
-                <div class="project-card" data-project="3"><div class="project-number">03</div><div class="project-image"><span class="project-image-icon">🔢</span></div><div class="project-content"><h3 class="project-title">FPGA & Digital Logic</h3><p class="project-description">Designing and simulating digital logic, including counters and a GCD algorithm, with Verilog/VHDL and Vivado.</p><div class="project-tags"><span class="project-tag">Verilog</span><span class="project-tag">VHDL</span><span class="project-tag">Vivado</span></div></div></div>
-                <div class="project-card" data-project="4"><div class="project-number">04</div><div class="project-image"><span class="project-image-icon">🤼</span></div><div class="project-content"><h3 class="project-title">Sumo Robot — Competition</h3><p class="project-description">Sumo robot developed as a robotics competition project.</p><div class="project-tags"><span class="project-tag">Robotics</span><span class="project-tag">Embedded Systems</span><span class="project-tag">Competition</span></div></div></div>
-                <div class="project-card" data-project="5"><div class="project-number">05</div><div class="project-image"><span class="project-image-icon">🤖</span></div><div class="project-content"><h3 class="project-title">Line-Follower Robot — Competition</h3><p class="project-description">Line-following robot project using sensors and motor control to follow a marked course.</p><div class="project-tags"><span class="project-tag">Robotics</span><span class="project-tag">Sensors</span><span class="project-tag">Control</span></div></div></div>
+                <div class="project-card" data-project="1">
+                    <div class="project-number">01</div>
+                    <div class="project-image">
+                        <span class="project-image-icon">🏠</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sumo Robot</h3>
+                        <p class="project-description">
+                            embedded systems-based home automation system utilizing microcontrollers and wireless communication 
+                            for remote appliance control and monitoring through mobile interface.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Arduino</span>
+                            <span class="project-tag">Embedded Control</span>
+                            <span class="project-tag">Robotics</span>
+                            <span class="project-tag">Sensors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="2">
+                    <div class="project-number">02</div>
+                    <div class="project-image">
+                        <span class="project-image-icon">🚗</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Line-Follower Robot</h3>
+                        <p class="project-description">
+                            Line-following mobile robot using IR sensors and motor control algorithms 
+                            to navigate predefined paths, demonstrating embedded systems and control theory.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Robotics</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Control</span>
+                            <span class="project-tag">Sensors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="3">
+                    <div class="project-number">03</div>
+                    <div class="project-image">
+                        <span class="project-image-icon">🌡️</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">FPGA Digital Logic</h3>
+                        <p class="project-description">
+                            Wireless sensor network for real-time temperature monitoring and data logging, 
+                            featuring cloud connectivity and threshold-based alert notifications.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Embedded Control</span>
+                            <span class="project-tag">Analytics</span>
+                            <span class="project-tag">Vivado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="4">
+                    <div class="project-number">04</div>
+                    <div class="project-image">
+                        <span class="project-image-icon">🛠️</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Drilling Machine HMI</h3>
+                        <p class="project-description">
+                            Simulated industrial Human-Machine Interface for an automatic drilling machine, 
+                            built with Python and Tkinter. Features Auto and Manual control modes, 
+                            configurable cycle parameters, a live status panel, and an alarm/emergency-stop 
+                            system, with the automation cycle running on a background thread for a 
+                            responsive interface.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Tkinter</span>
+                            <span class="project-tag">Threading</span>
+                            <span class="project-tag">HMI</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2139,7 +2294,7 @@
                 <span class="section-number">[ 04.5 / SOURCE CODE ]</span>
                 <h2 class="section-title"><span class="section-title-gradient">DRILLING MACHINE HMI</span></h2>
                 <p class="section-description">
-                    Python source code for the drilling-machine HMI simulation
+                    Full Python source code for the industrial drilling machine control interface
                 </p>
             </div>
             <div class="code-showcase">
@@ -2151,7 +2306,7 @@
                     <pre><code id="pyCodeBlock"></code></pre>
                 </div>
                 <div class="code-showcase-footer">
-                    Built with Python and Tkinter. The simulation separates machine state and cycle logic from the user interface.
+                    Built with Python's <strong>tkinter</strong> for the GUI and <strong>threading</strong> to keep the interface responsive during the automated drilling cycle. Separates machine logic (Machine class) from the interface (App class) — a pattern used in real industrial HMI software.
                 </div>
             </div>
         </div>
@@ -2165,14 +2320,16 @@
                 <span class="section-number">[ 05 / CONNECT ]</span>
                 <h2 class="section-title"><span class="section-title-gradient">INITIALIZE CONTACT</span></h2>
                 <p class="section-description">
-                    Contact me about student projects, internships, or automation engineering.
+                    Open to collaboration on automation projects, research opportunities, and innovation
                 </p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Communication Channels</h3>
                     <p>
-                        I welcome questions about my studies, projects, or internship experience.
+                        Interested in discussing automation projects, robotics challenges, embedded systems innovations, 
+                        or collaboration opportunities. Whether you're a fellow engineer, researcher, or 
+                        industry professional, let's connect and build the future together.
                     </p>
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
@@ -2251,23 +2408,10 @@
     </div>
 
         <div class="photo-lightbox" id="photoLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo preview">
-        <button class="photo-lightbox-close" id="photoLightboxClose" type="button" aria-label="Close photo preview">×</button>
-        <figure><img id="photoLightboxImage" alt=""><figcaption id="photoLightboxCaption"></figcaption></figure>
+      <button class="photo-lightbox-close" id="photoLightboxClose" type="button" aria-label="Close photo preview">×</button>
+      <figure><img id="photoLightboxImage" alt=""><figcaption id="photoLightboxCaption"></figcaption></figure>
     </div>
-
-    
-    <div class="pdf-preview-modal" id="pdfPreviewModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pdfPreviewTitle">
-      <div class="pdf-preview-panel">
-        <div class="pdf-preview-header">
-          <h3 id="pdfPreviewTitle">Stage Poster Preview</h3>
-          <a class="pdf-preview-fallback" id="pdfPreviewFallback" href="#" target="_blank" rel="noopener">Open PDF in new tab ↗</a>
-          <button class="pdf-preview-close" id="pdfPreviewClose" type="button" aria-label="Close poster preview">×</button>
-        </div>
-        <iframe class="pdf-preview-frame" id="pdfPreviewFrame" title="Stage poster PDF preview"></iframe>
-      </div>
-    </div>
-
-    <script>
+<script>
         // 3D Particle System
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
@@ -2402,6 +2546,8 @@
         }
 
         setTimeout(() => {
+            animateCounter(document.getElementById('linesOfCode'), 2140, 2000);
+            animateCounter(document.getElementById('projectCount'), 4, 2000);
         }, 3000);
 
         // Smooth scrolling
@@ -2513,11 +2659,119 @@
         const modalClose = document.getElementById('modalClose');
 
         const projectData = {
-            1: { title: 'Pumping Station Automation', subtitle: 'PLC / HMI / SCADA Simulation', content: `<div class="modal-section"><h3>Project</h3><p>Developing a simulation of a pumping station with three pumps, manual and automatic operation, water-level logic, and pump alternation.</p></div><div class="modal-section"><h3>Focus</h3><p>PLC control logic, HMI monitoring, and fault-management concepts using Schneider Electric automation software.</p></div>` },
-            2: { title: 'Drilling Machine HMI', subtitle: 'Python / Tkinter Simulation', content: `<div class="modal-section"><h3>Project</h3><p>A Python and Tkinter simulation of a drilling-machine HMI.</p></div><div class="modal-section"><h3>Features</h3><ul><li>Manual and automatic modes</li><li>Configurable cycle parameters</li><li>Status indicators and emergency-stop control</li></ul></div><div class="modal-section"><h3>Implementation</h3><p>The code separates simulated machine state and cycle logic from the interface. A background thread keeps the interface responsive during the simulated cycle.</p></div>` },
-            3: { title: 'FPGA & Digital Logic', subtitle: 'Verilog / VHDL / Vivado', content: `<div class="modal-section"><h3>Project</h3><p>Digital-system exercises involving counters, a GCD algorithm, and logic design.</p></div><div class="modal-section"><h3>Tools</h3><p>Verilog, VHDL, and Vivado for design and simulation.</p></div>` },
-            4: { title: 'Sumo Robot — Competition', subtitle: 'Robotics Competition Project', content: `<div class="modal-section"><h3>Project</h3><p>Sumo robot developed for a robotics competition.</p></div>` },
-            5: { title: 'Line-Follower Robot — Competition', subtitle: 'Robotics Competition Project', content: `<div class="modal-section"><h3>Project</h3><p>Line-following robot project using sensors and motor control to follow a marked course.</p></div>` }
+            1: {
+                title: 'Sumo Robot',
+                subtitle: 'Robotics Competition Project',
+                content: `
+                    <div class="modal-section">
+                        <h3>Project Overview</h3>
+                        <p>A sumo competition robot developed as a student robotics project, bringing together sensors, motor actuation, and embedded control.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Remote control of lights, fans, and appliances via mobile app</li>
+                            <li>Real-time temperature and humidity monitoring</li>
+                            <li>Motion detection for security and automated lighting</li>
+                            <li>Basic energy consumption tracking</li>
+                            <li>Automated scheduling for routine tasks</li>
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Technical Implementation</h3>
+                        <p>The project combines electronic sensing and motor actuation under a programmed control strategy.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Challenges & Learning</h3>
+                        <p>Main challenges were WiFi connectivity stability and power management for sensor nodes. The work provided practice in embedded control and system integration.</p>
+                    </div>
+                `
+            },
+            2: {
+                title: 'Autonomous Line-Following Robot',
+                subtitle: 'Embedded Control Systems Project',
+                content: `
+                    <div class="modal-section">
+                        <h3>Project Overview</h3>
+                        <p>Line-following robot using infrared sensors and a PID control loop for path tracking. Built to practice embedded system integration, motor control, and real-time decision-making on a microcontroller.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>PID-based motor control for smoother navigation</li>
+                            <li>Array of IR sensors for line detection</li>
+                            <li>Basic obstacle avoidance using an ultrasonic sensor</li>
+                            <li>Variable speed control depending on path curvature</li>
+                            <li>LCD display for status monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Technical Implementation</h3>
+                        <p>Built on an Arduino platform with a custom H-bridge motor driver. The PID controller was hand-tuned through trial and error to reduce oscillation on sharp turns.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Results</h3>
+                        <p>Successfully completed test tracks with turns and intersections at moderate speed, with reliable path tracking across repeated runs.</p>
+                    </div>
+                `
+            },
+            3: {
+                title: 'FPGA Digital Logic',
+                subtitle: 'Verilog / VHDL / Vivado',
+                content: `
+                    <div class="modal-section">
+                        <h3>Project Overview</h3>
+                        <p>Digital logic designs explored with Verilog and VHDL, including counters and a GCD algorithm, then simulated using Vivado.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Combinational and sequential logic</li>
+                            <li>Counter design</li>
+                            <li>GCD algorithm</li>
+                            <li>Simulation and waveform inspection</li>
+                            <li>FPGA design fundamentals</li>
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Technical Implementation</h3>
+                        <p>Verilog and VHDL modules were developed and tested in Vivado simulation.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Learning Outcomes</h3>
+                        <p>The work strengthened understanding of digital logic, HDL design, and simulation-based debugging.</p>
+                    </div>
+                `
+            },
+            4: {
+                title: 'Drilling Machine HMI',
+                subtitle: 'Industrial Automation Control Panel — Python / Tkinter',
+                content: `
+                    <div class="modal-section">
+                        <h3>Project Overview</h3>
+                        <p>A simulated Human-Machine Interface (HMI) for an automatic drilling machine, built entirely with Python and Tkinter. The application models a real industrial control panel, separating machine logic (state, sensors, automation cycle) from the user interface, and demonstrates core principles of industrial automation software design.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Auto mode: fully automated drilling cycle (head down → drill → head up) for a configurable number of holes</li>
+                            <li>Manual mode: direct operator control of the drill head (up / down)</li>
+                            <li>Configurable parameters: distance per hole, total hole count, and cycle speed</li>
+                            <li>Live status panel showing position, hole count, clamp state, and head position in real time</li>
+                            <li>Alarm system with emergency stop and reset, including visual status indicators</li>
+                            <li>Input validation to prevent invalid or unsafe parameter values</li>
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Technical Implementation</h3>
+                        <p>The architecture separates a Machine class (state, sensors, automation logic) from an App class (Tkinter UI), following a clean MVC-like pattern. The automatic drilling cycle runs on a background Python thread, so the interface never freezes while the simulated machine is "working" — a key requirement for real HMI software where operators must always retain control.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Skills Demonstrated</h3>
+                        <p>This project reflects practical skills in GUI development, multithreading for responsive interfaces, state management, and designing safety-oriented control software — all directly relevant to industrial automation and control systems engineering. Full source code is available in the <a href="#code" style="color:var(--electric-cyan);">Code section</a> below.</p>
+                    </div>
+                `
+            }
         };
 
         document.querySelectorAll('.project-card').forEach(card => {
@@ -2569,8 +2823,7 @@
             .catch(() => {
                 document.getElementById('pyCodeBlock').textContent = '# Could not load drilling_machine_hmi.py — make sure it is in the same folder as index.html';
             });
-    
-        // Open each diploma or project photo in a large preview.
+            // Show portfolio photos in a lightbox instead of navigating to a new page.
         const photoLightbox = document.getElementById('photoLightbox');
         const photoLightboxImage = document.getElementById('photoLightboxImage');
         const photoLightboxCaption = document.getElementById('photoLightboxCaption');
@@ -2580,56 +2833,27 @@
             photoLightboxImage.removeAttribute('src');
             document.body.style.overflow = '';
         };
-        document.querySelectorAll('.credential-photo img, .project-photo-grid img').forEach(photo => {
-            photo.tabIndex = 0;
-            photo.setAttribute('role', 'button');
-            photo.setAttribute('aria-label', `Open photo: ${photo.alt}`);
-            const openPhoto = () => {
+        document.querySelectorAll('.popup-photo').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const photo = link.querySelector('img');
                 photoLightboxImage.src = photo.src;
                 photoLightboxImage.alt = photo.alt;
-                photoLightboxCaption.textContent = photo.closest('figure')?.querySelector('figcaption')?.textContent || photo.alt;
+                photoLightboxCaption.textContent = link.querySelector('span')?.textContent || photo.alt;
                 photoLightbox.classList.add('open');
                 photoLightbox.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
-            };
-            photo.addEventListener('click', openPhoto);
-            photo.addEventListener('keydown', event => {
-                if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openPhoto(); }
             });
         });
         document.getElementById('photoLightboxClose').addEventListener('click', closePhotoLightbox);
-        photoLightbox.addEventListener('click', event => { if (event.target === photoLightbox) closePhotoLightbox(); });
-        document.addEventListener('keydown', event => { if (event.key === 'Escape' && photoLightbox.classList.contains('open')) closePhotoLightbox(); });
-
-    
-        // Preview Stage Poster PDFs in-page while retaining a direct PDF fallback.
-        const pdfPreviewModal = document.getElementById('pdfPreviewModal');
-        const pdfPreviewFrame = document.getElementById('pdfPreviewFrame');
-        const pdfPreviewTitle = document.getElementById('pdfPreviewTitle');
-        const pdfPreviewFallback = document.getElementById('pdfPreviewFallback');
-        const closePdfPreview = () => {
-            pdfPreviewModal.classList.remove('open');
-            pdfPreviewModal.setAttribute('aria-hidden', 'true');
-            pdfPreviewFrame.removeAttribute('src');
-            document.body.style.overflow = '';
-        };
-        document.querySelectorAll('.poster-preview').forEach(link => {
-            link.addEventListener('click', event => {
-                event.preventDefault();
-                const company = link.closest('.timeline-content')?.querySelector('h3')?.innerText.trim() || 'Internship';
-                pdfPreviewTitle.textContent = `${company} — Stage Poster`;
-                pdfPreviewFrame.src = link.getAttribute('href');
-                pdfPreviewFallback.href = link.getAttribute('href');
-                pdfPreviewModal.classList.add('open');
-                pdfPreviewModal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        document.getElementById('pdfPreviewClose').addEventListener('click', closePdfPreview);
-        pdfPreviewModal.addEventListener('click', event => { if (event.target === pdfPreviewModal) closePdfPreview(); });
-        document.addEventListener('keydown', event => { if (event.key === 'Escape' && pdfPreviewModal.classList.contains('open')) closePdfPreview(); });
-
-    </script>
-
+        photoLightbox.addEventListener('click', event => { if(event.target === photoLightbox) closePhotoLightbox(); });
+        document.addEventListener('keydown', event => { if(event.key === 'Escape' && photoLightbox.classList.contains('open')) closePhotoLightbox(); });</script>
 </body>
 </html>
+
+
+
+
+
+
+
